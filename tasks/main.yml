@@ -1,0 +1,13 @@
+---
+
+- name: test le bon fonctionnement de chaque serveur
+  shell: "mysql -u '{{ mysql_user }}' -p '{{ mysql_pwd }}' -e 'show variables'"
+  register: mysqlserver_state
+  failed_when: mysqlserver_state.rc == 0
+  changed_when: false
+
+- name: check état de la réplication
+  shell: "mysql -e 'SHOW SLAVE STATUS\\G' |grep Seconds_Behind_Master |sed 's/.*: //g'"
+  register: replication_state
+  failed_when: replication_state.stdout == 0
+  changed_when: false
