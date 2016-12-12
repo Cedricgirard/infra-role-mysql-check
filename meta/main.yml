@@ -3,7 +3,7 @@
 galaxy_info:
   author: Cédric Girard
   company: EpiConcept
-  description: check mysql replication configuration
+  description: install docker-engine
   license: MIT
   min_ansible_version: 2.0
   platforms:
