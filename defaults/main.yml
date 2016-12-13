@@ -1,5 +1,2 @@
 ---
-# defaults file
-
-proxy_environment:
-setproxy: false
+# defaults file for mysql-check
